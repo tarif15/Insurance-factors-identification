@@ -1,0 +1,91 @@
+ins <-read.csv('Insurance_factor_identification.csv')
+
+setwd("~/")
+
+View(ins)
+
+head(ins,5)
+
+str(ins)
+
+
+
+ins$Kilometres <-as.factor(ins$Kilometres)
+
+ins$Kilometres
+
+str(ins)
+
+
+
+ins$Make <-as.factor(ins$Make)
+
+ins$Make 
+
+str(ins)
+
+
+
+ins$Zone <-as.factor(ins$Zone)
+
+ins$Zone
+
+str(ins)
+
+
+ins$Bonus <- as.factor(ins$Bonus)
+
+ins$Bonus
+
+str(ins)
+
+summary(ins)
+
+
+
+pairs(ins)
+
+
+plot(ins$Payment,ins$Claims)
+
+
+plot(ins$Payment,ins$Insured)
+
+
+lin_model <-lm(Payment~Claims+Insured,data=ins)
+
+summary(lin_model)
+
+
+
+lin_m<-lm(Payment ~.,data=ins)
+
+summary(lin_m)
+
+
+
+lin_m<-lm(Payment ~Kilometres+Claims+Insured,data=ins)
+
+summary(lin_m)
+
+
+
+library('dplyr')
+
+
+ins %>% group_by(Zone) %>% summarize(avg_insured=mean(Insured),
+                                     avg_claims=mean(Claims),avg_bonus=mean(Bonus))
+
+
+ins %>% group_by(Kilometres) %>% summarize(avg_insured=mean(Insured),
+                                           avg_claims=mean(Claims),avg_bonus=mean(Bonus))
+
+
+ins %>% group_by(Bonus) %>% summarize(avg_insured=mean(Insured),
+                                      avg_claims=mean(Claims),avg_bonus=mean(Bonus))
+
+
+claim_model <-lm(Claims ~Kilometres+Insured+Make+Bonus+Zone,data=ins)
+
+
+summary(claim_model)
