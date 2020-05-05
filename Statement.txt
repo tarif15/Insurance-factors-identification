@@ -1,0 +1,44 @@
+## importing the insurance file:-
+
+#converted the kms into factor:-
+
+#converted the make into factor:-
+
+#converted the Zone into factor:-
+
+#converted the Bonus into factor:-
+
+#The committee is interested to know each field of the data collected through descriptive analysis 
+#to gain basic insights into the data set and to prepare for further analysis:-
+
+#summary fuction for descriptive analytics:-
+
+#visualize the results for better understanding:-
+
+#The total value of payment by an insurance company is an important factor to be monitored. 
+#So the committee has decided to find whether this payment is related to the number of claims and the number of insured policy years:-
+
+
+# plot of payment and the claims
+
+# plot of payment with the policy years
+
+# create a linear model in which payment is the dependent and isnured and claims are independent:-
+
+#since the coeffiecients as p<0.05 therefore Payment is related to claims and insured
+
+
+# to look at all the variables
+
+#removing the independent variable whose p value is greater than alpha i.e. 0.05:-
+
+#The committee wants to figure out the reasons for insurance payment increase and decrease.
+#So they have decided to find whether distance, location, bonus, make, and insured amount 
+#or claims are affecting the payment or all or some of these are affecting it:- 
+
+
+#aggregate the - amount, claims, and payment by Kilometres, zone and bonus
+
+
+#The committee wants to understand what affects their claim rates so as to decide the right premiums for a certain set of situations. 
+#Hence, they need to find whether the insured amount, zone, kilometre, bonus, or make affects the claim rates and to what extent:-
